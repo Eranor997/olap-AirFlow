@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      - POSTGRES_USER=default
+      - POSTGRES_PASSWORD=default
+    ports:
+      - "5050:5050"
+    volumes:
+       - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+    postgres_data:
